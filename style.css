@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;1,500;1,700&family=Poppins:ital,wght@0,100;0,300;0,600;0,900;1,100;1,200;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  transition: 0.2s ease-in;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  filter: blur(12px);
+  transform: scale(1.2);
+
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffffff4f;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(52, 4, 75, 0.4);
+  scale: 1.5;
+  backdrop-filter: blur(7px);
+  z-index: 2;
+}
+
+/* Time box------------------------------------------------------------ */
+
+.timeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* height: 5rem; */
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.1);
+  /* border: 1px solid; */
+}
+
+.time {
+  margin: auto;
+  /* margin-bottom: .7rem; */
+  /* background: red; */
+}
+
+.time > input {
+  width: 5rem;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  text-align: center;
+}
+
+/* Date & Time---------------------------------------------------------------- */
+
+.date {
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.time {
+  font-size: 3rem;
+  /* font-weight: 900; */
+}
+
+/* .time_hour{
+  color: red;
+  font-size: 3rem;
+  font-weight: 900;
+}
+.time_minute{
+  color: #00ffc3;
+}
+.time_second{
+  color: blue;
+}
+.time_am_pm{
+  color: green;
+} */
+/* Input---------------------------------------------------------------- */
+
+.input {
+  position: absolute;
+  /* top: 5%; */
+  background-color: rgba(128, 0, 128, 0.27);
+  border: 1px solid white;
+  /* border-radius: 1rem; */
+  padding: 1rem 0.2rem;
+  z-index: 5;
+}
+
+.output {
+  border: 1px solid #ffffff4f;
+  min-height: 0rem;
+  max-height: 75vh;
+  min-width: 17rem;
+  margin-top: 2rem;
+  /* max-height: 40rem; */
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.2rem;
+  overflow: scroll;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1.2rem 0.9rem;
+  height: 100%;
+}
+
+fieldset {
+  padding: 2rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  border-radius: 1rem;
+}
+
+legend {
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  border-radius: 25%;
+  padding: 0.5rem 1rem;
+}
+
+legend > div {
+  display: flex;
+}
+
+input,
+select {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: bolder;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  /* transition: .5s; */
+}
+input:focus {
+  border: 2px solid purple;
+  outline: 2px solid purple;
+  /* outline-offset: 5px; */
+}
+
+input:active {
+  border: 2px solid purple;
+  outline: 2px solid purple;
+  outline-offset: 5px;
+}
+
+#name,
+#description,
+input,
+select {
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0.7rem;
+  margin-left: 0.2rem;
+}
+
+option {
+  background: rgba(128, 0, 128, 0.645);
+  border: none;
+  outline: none;
+  appearance: none;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+}
+.active {
+  /* border: 1px solid white; */
+  display: flex;
+  align-self: right;
+  width: 100%;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transform: scale(1.1);
+  padding-right: 1rem;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  /* padding: 1rem .4rem; */
+}
+
+.days > label {
+  padding: 0.27rem 0;
+  padding-left: 1rem;
+}
+
+.day {
+  margin-right: 1rem;
+}
+
+.days + div {
+  display: flex;
+  justify-content: flex-end;
+  /* background: red; */
+}
+
+.active > label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Output---------------------------------------------------------------- */
+
+.alarm {
+  border: 1px solid #ffffff4f;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  background-color: rgba(128, 0, 128, 0.27);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.27);
+  transition: 0.4s;
+}
+
+.alarm:hover {
+  transform: translateX(-2px) translateY(-2px) scale(1.04);
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+}
+
+.alarm_top_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 15rem;
+}
+
+.alarm_middle_box h4 {
+  font-size: 10px;
+}
+
+.alarm_middle_box h6 {
+  font-size: 9px;
+}
+
+.alarm_bottom_box {
+  border: 1px solid #ffffff4f;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+  margin-top: 0.2rem;
+}
+
+#cc {
+  height: 32px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#ccc {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 0px solid #ffffff;
+  background-clip: content-box;
+  padding: 1px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+input[type='checkbox']:checked {
+  background-color: #6cff7b;
+}
+
+.alarm > span > button {
+  border: none;
+  border-radius: 1rem;
+  height: 36px;
+  padding: 0 0.1rem;
+  width: 47px;
+  /* aspect-ratio: 1 / 1; */
+  background: purple;
+  /* justify-self: flex-end; */
+  font-weight: bolder;
+  transition: 0.2s ease-in;
+}
+
+.delete {
+  border: none;
+  background-color: purple;
+  margin: 0 !important;
+  transition: 0.2s ease-in;
+}
+.delete:hover,
+.alarm > span > button:hover {
+  background-color: white;
+  color: purple;
+}
+
+/* Layout---------------------------------------------------------------- */
+.hide {
+  /* visibility: hidden; */
+  display: none;
+}
+
+button {
+  border: 1px solid #00ffc3;
+  color: white;
+  width: 15%;
+  height: 100%;
+  border-radius: 50%;
+}
+/* #name{
+  width: 90%;
+} */
+#description {
+  width: 40%;
+  /* width: 10%; */
+}
+#description:focus {
+  width: 100%;
+}
+
+input[type='checkbox'] {
+  margin: 0.1rem 0rem;
+  margin-right: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.2rem 1rem;
+}
+
+/* The addAlarmBtn ---------------------------------------------------*/
+#addAlarmBtn,
+#stopAlarmButton {
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  right: 2rem;
+  bottom: 0.5rem;
+  font-size: 2rem;
+  border: 1px solid white;
+  background-color: rgba(128, 0, 128, 0.5);
+  transition: 0.2s ease-in;
+  z-index: 10;
+}
+#addAlarmBtn:hover,
+#stopAlarmButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+#stopAlarmButton {
+  bottom: 8rem;
+}
+
+/* The Scrollbar ~      */
+
+::-webkit-scrollbar {
+  /* width: 7px; */
+  width: none;
+  display: none;
+}
+/* scrollbar-width: none; */
+
+::-webkit-scrollbar-track {
+  background: black;
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ffc3;
+  /* border: 1px solid red; */
+  /* border-radius: 50%; */
+  overflow: hidden;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 255, 0);
+}
+::-webkit-scrollbar-button {
+  background: blue;
+  /* border: 2px solid red; */
+  display: none;
+}
+/* ::-webkit-scrollbar-corner {
+  background: red;
+} */
+
+.disable {
+  display: none;
+}
+
+.floatBox {
+  position: absolute;
+  left: -6rem;
+  bottom: 12rem;
+  font-size: 0.7rem;
+  transform: rotate(270deg);
+}
+
+.credit {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.4rem;
+  font-size: 15px;
+}
+
+.credit a {
+  text-decoration: none;
+  color: rgb(250, 75, 250);
+}

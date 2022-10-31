@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="#" type="image/x-icon" />
+  <style>
+    .hide {
+      display: none;
+    }
+
+    .disable {
+      display: none;
+    }
+  </style>
+  <script src="./script.js" defer></script>
+  <title>Storage</title>
+</head>
+
+<body>
+  <div class="background"></div>
+  <div class="overlay hide"></div>
+  <div class="container">
+
+    <!-- The clock----------------------------------------------------------------------------------------------------------------->
+    <div class="timeBox">
+      <div class="time">
+        <span class="time_hour">00</span>:<span class="time_minute">00</span>:<span class="time_second">00</span>
+        <span class="time_am_pm">0M</span>
+      </div>
+      <span class="date">0000000 00 00000000</span>
+    </div>
+
+    <!-- Input box---------------------------------------------------------------------------------------------------------------->
+    <div class="input hide">
+      <form id="form">
+        <fieldset>
+          <legend>New Alarm</legend>
+          <input type="text" name="" id="name" value="Alarm" placeholder="name" />
+          <input type="text" id="description" value="" placeholder="Description" />
+
+          <!--  -->
+          <div>
+            <div class="time">
+              <input type="number" min="1" max="12" maxlength="2" required placeholder="hour" />
+              <input type="number" min="0" max="59" maxlength="2" required placeholder="minutes" />
+              <!--  -->
+              <select name="" id="am_pm">
+                <option value="am">am</option>
+                <option value="pm">pm</option>
+              </select>
+            </div>
+          </div>
+          <!--  -->
+          <select id="repeat">
+            <option value="Once">Once</option>
+            <option value="Alldays">Alldays</option>
+            <option value="Weekdays">Weekdays</option>
+            <option value="Weekend">Weekend</option>
+            <option value="Custom">Custom</option>
+          </select>
+          <div class="active">
+            <label for="">
+              Active
+              <input type="checkbox" name="" id="active" checked />
+            </label>
+          </div>
+          <div class="days hide">
+            <label>
+              <input type="checkbox" name="Sunday" id="" class="day" />Sunday
+            </label>
+            <label>
+              <input type="checkbox" name="Monday" id="" class="day" />Monday
+            </label>
+            <label>
+              <input type="checkbox" name="Tuesday" class="day" />Tuesday
+            </label>
+            <label>
+              <input type="checkbox" name="Wednesday" class="day" />Wednesday
+            </label>
+            <label>
+              <input type="checkbox" name="Thursday" class="day" />Thursday
+            </label>
+            <label>
+              <input type="checkbox" name="Friday" id="" class="day" />Friday
+            </label>
+            <label>
+              <input type="checkbox" name="Saturday" class="day" />Saturday
+            </label>
+          </div>
+          <!--  -->
+          <div>
+            <input type="reset" value="Reset" id="reset" class="disable" />
+            <input type="submit" value="Add" id="submit" />
+            <!-- <button type="submit" id="submit">submit</button> -->
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- Output box--------------------------------------------------------------------------------------------------------------------->
+    <div class="output"></div>
+  </div>
+
+  <button id="stopAlarmButton" class="hide">🤚</button>
+  <button id="addAlarmBtn">+</button>
+
+  <div class="floatBox">
+    <h2>Alarms going to ring  today 🔽</h2>
+    <span></span>
+  </div>
+
+  <div class="credit">
+
+    <h6>Photo: <a
+        href="https://unsplash.com/es/@manosgk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Manos
+        Gkikas</a> on <a
+        href="https://unsplash.com/s/photos/purple?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    </h6>
+    <h6>Audio: <a href="https://www.bensound.com/royalty-free-music/track/memories"> https://www.bensound.com</a></h6>
+  </div>
+  <script>
+    document.addEventListener('contextmenu', ev => ev.preventDefault())
+  </script>
+</body>
+
+</html>
